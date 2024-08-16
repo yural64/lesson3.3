@@ -6,6 +6,6 @@ pygame.init() # инициализация модуля
 
 running = True
 while running:
-    pass
+    pass # пустой оператор (заглушка)
 
 pygame.quit() # ф-я выхода из игры как только завершится цикл
