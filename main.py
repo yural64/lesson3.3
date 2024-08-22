@@ -5,12 +5,11 @@ pygame.init() # инициализация модуля
 
 # создаем константы для игрового окна
 
-SCREEN = "Main screen"
-TARGET = "Main target"
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
 
-SCREEN.WIDTH = 800 # ширина окна 800 пикселей
-SCREEN.HEIGHT = 600 # высота окна 600 пикселей
-screen = pygame.display.set_mode((SCREEN.WIDTH, SCREEN.HEIGHT)) # отрисовка экрана
+# создаем окно
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 pygame.display.set_caption("Игра Тир") # заголовок экрана
 icon = pygame.image.load("img/lesson3_tir.jpg") # иконка окна
@@ -22,11 +21,11 @@ target_img = pygame.image.load("img/target.png")
 
 # ширина и высота изображения
 
-TARGET.WIDTH = 50
-TARGET.HEIGHT = 50
+TARGET_WIDTH = 50
+TARGET_HEIGHT = 50
 
-target_x = random.randint(0, SCREEN.WIDTH - TARGET.WIDTH)
-target_y = random.randint(0, SCREEN.HEIGHT - TARGET.HEIGHT)
+target_x = random.randint(0, SCREEN_WIDTH - TARGET_WIDTH)
+target_y = random.randint(0, SCREEN_HEIGHT - TARGET_HEIGHT)
 
 color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) # рандомный фоновый цвет
 
