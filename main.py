@@ -33,6 +33,17 @@ color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
 running = True
 while running:
-    pass # пустой оператор (заглушка)
+    screen.fill(color)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            mouse_x, mouse_y = pygame.mouse.get_pos()
+            if target_x < mouse_x < target_x + TARGET_WIDTH and target_y < mouse_y < target_y + TARGET_HEIGHT:
+                target_x = random.randint(0, SCREEN_WIDTH - TARGET_WIDTH)
+                target_y = random.randint(0, SCREEN_HEIGHT - TARGET_HEIGHT)
+
+    pygame.display.update()
+    screen.blit(target_img, (target_x, target_y))
 
 pygame.quit() # ф-я выхода из игры как только завершится цикл
