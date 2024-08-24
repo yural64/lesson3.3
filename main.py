@@ -43,7 +43,7 @@ while running:
                 target_x = random.randint(0, SCREEN_WIDTH - TARGET_WIDTH)
                 target_y = random.randint(0, SCREEN_HEIGHT - TARGET_HEIGHT)
 
-    pygame.display.update()
     screen.blit(target_img, (target_x, target_y))
-
+    pygame.display.update()
+    
 pygame.quit() # ф-я выхода из игры как только завершится цикл
