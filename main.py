@@ -1,7 +1,11 @@
 import pygame # импорт модуля
 import random
 
-pygame.init() # инициализация модуля
+pygame.init() # инициализация модуля pygame
+pygame.mixer.init() # инициализация модуля звука
+
+# загрузка звука
+shot_sound = pygame.mixer.Sound('img/Winchester12-RA_The_Sun_God-1722751268.wav')  # Убедитесь, что файл 'shot.wav' находится в той же директории или укажите полный путь
 
 # создаем константы для игрового окна
 
@@ -39,6 +43,9 @@ while running:
             running = False
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_x, mouse_y = pygame.mouse.get_pos()
+            # Воспроизведение звука
+            shot_sound.play()
+
             if target_x < mouse_x < target_x + TARGET_WIDTH and target_y < mouse_y < target_y + TARGET_HEIGHT:
                 target_x = random.randint(0, SCREEN_WIDTH - TARGET_WIDTH)
                 target_y = random.randint(0, SCREEN_HEIGHT - TARGET_HEIGHT)
